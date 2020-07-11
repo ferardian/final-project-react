@@ -1,17 +1,25 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk'; // Middleware between action & reducer
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import WeatherApp from './WeatherApp';
+import mainReducer from './components/reducers';
+import registerServiceWorker from './registerServiceWorker';
+
+const store = createStore(
+  mainReducer,
+  applyMiddleware(thunk)
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <WeatherApp />
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+registerServiceWorker();
+//any JS and CSS files must be inside src folder or Webpack won’t see them

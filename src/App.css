@@ -1,38 +1,313 @@
-.App {
+/* .page-title {
+  color: $title-color;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+} */
+
+.body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #222;
+  padding:60px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#map {
+  height: 400px;
+  width: 100%;
+  display:block;
+ }
+
+.page-title {
+  text-align: center;
+  color: green;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.page-text {
+  text-align: center;
+  color: #0059b3;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color:  #0059b3;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  color:  green;
+  font-weight: bold;
+}
+
+h4 {
+  text-align: center;
+  color:  #0059b3;
+  font-weight: bold;
+}
+
+p {
+  text-align: center;
+  color:  #0059b3;
+}
+
+Form {
+  text-align: center;
+  line-height: 25px;
+  width: 100%;
+}
+
+
+.menu {
+  margin: auto;
+}
+
+#nav {
+  width:415px;
+  margin:0 auto;
+  list-style:none;
   }
+#nav li {
+  float:left;
+}
+#nav a {
+  display:block;
+  text-align:center;
+  width:150px; /* fixed width */
+  text-decoration:none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.col-md-12 column {
+  text-align:center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.col-xs-4 column form {
+   margin:auto;
+}
+
+.col-md-12 column form {
+   margin:auto;
+}
+
+input {
+  text-align: center;
+  color: black;
+}
+
+Button {
+  border-radius: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.addNewCity {
+  border-radius: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+  display:block; /* change this from inline-block */
+  width:20%; /* setting the width */
+  margin:0 auto; /* this will center  it */
+  position:relative;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+input[type=text] {
+  text-align: center;
+  font: inherit;
+  border: 2px solid;
+  border-color: #87cefa;
+  padding: 13px 12px;
+  font-size: 14px;
+  box-shadow: 0 1px 1px;
+  border-width: 2px;
+  outline: none;
+  display: block;
+  color: black;
+  margin: auto;
+  border-radius: 4px;
+}
+
+input:focus {
+  background-color: #98FB98;
+}
+
+.wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.loc-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.loc {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;
+  text-transform: capitalize;
+}
+
+.gloc {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: green;
+}
+
+.temp-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.temp {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.cond-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.cond {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;
+  text-transform: capitalize;
+}
+
+p.capitalize {
+    text-transform: capitalize;
+}
+
+.temp-symbol {
+  position: absolute;
+  font-size: 9px;
+  font-weight: bold;
+  margin-left: 2px;
+  margin-top: 0px;
+}
+
+.temp-date {
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.outputDisplay {
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative;
+  width: 340px;
+  line-height: 15px;
+  padding: 6px 6px;
+}
+
+.cityList{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  height:32px;
+  font-weight: bold;
+}
+
+.cityList li{
+  width: 140px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  background-color: white;
+  color: black;
+  margin-right: 32px;
+  border: 2px solid #0059b3;
+  border-radius: 4px;
+  padding: 3px 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cityList li:hover{
+  background-color: #98FB98;
+}
+
+.deleteButton {
+  visibility: hidden;
+  display: inline-block;
+  margin-right: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  color: black;
+}
+
+.cityList:hover .deleteButton {
+  visibility: visible;
+}
+
+
+body {
+  background-color: #FFCC00;
+  padding: 20px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #111;
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.content {
+  background-color: #FFF;
+  padding: 20px;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
 }
